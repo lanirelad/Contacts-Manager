@@ -1,0 +1,208 @@
+
+body
+{
+    font-family: Calibri, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    align-items: center;
+}
+
+
+#contExist
+{
+    text-align: center;
+    margin:0;
+    padding: 0;
+    font-family: 'Nunito';
+    /* display: none; */
+}
+
+
+#addForm
+{
+    max-width: 500px;
+    margin: 5% auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+h1 
+{
+    text-align: center;
+}
+
+label 
+{
+    font-weight: normal;
+    display: block;
+    margin-bottom: 5px;
+}
+
+select,
+input[type="text"],
+input[type="email"]
+{
+    width: calc(100% - 22px); /* Adjusted width for the input fields */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    vertical-align: middle; /* Align the input fields with their labels */
+}
+
+.CBcontainer input[type="checkbox"] 
+{
+    display: inline-block; 
+    vertical-align: middle; 
+    margin: 10px;
+    padding: 20px;
+    
+}
+
+.gender-label 
+{
+    font-weight: normal;
+    display: inline-block; /* Display labels inline */
+    vertical-align: middle; /* Align labels with radio buttons and checkboxes */
+    margin-right: 10px; /* Add spacing between checkbox/radio button and label */
+}
+
+.checkbox-label 
+{
+    font-weight: normal;
+    display: inline-block; /* Display labels inline */
+    vertical-align: middle; /* Align labels with checkbox */
+    margin-left: 5px; /* Add spacing between checkbox and label */
+    
+}
+
+input[type="tel"] 
+{
+    width: calc(100% - 85px); /* Adjusted width for the input fields */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] 
+{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(29, 161, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover 
+{
+    background-color: rgb(29, 161, 255);
+}
+
+.form-group
+{
+    margin-bottom: 20px;
+}
+
+.CBcontainter
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.labelContainer 
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+.labelContainer label
+{
+    font-weight: normal;
+    padding-right: 10px;
+}
+
+.CBcontainer input[type="checkbox"]:checked
+{
+    accent-color: MediumSeaGreen;
+}
+
+.CBcontainer input[type="checkbox"] /*not working */
+{
+    accent-color: tomato;
+}
+
+/* .thumbnailContainer {
+    width: 35%;
+    position: absolute; 
+    left: 200px; 
+    top: -8000px; 
+    background-color: lightgray; Adjust the background color
+    border: 1px solid gray; Adjust the border
+    border-radius: 5px; Add border radius for rounded corners
+    overflow: hidden; Ensure the thumbnail fits within the container
+    width: 400px;
+    height: 400px;
+}
+
+.thumbnailContainer img {
+    width: 100%; Make sure the image fills the container
+    height: 100%; Make sure the image fills the container
+    object-fit: contain; Ensure the image covers the entire container
+} */
+
+.popup 
+{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* width: 50%;
+    height: 20%; */
+}
+  
+.popup-content 
+{
+    text-align: center;
+}
+  
+#okButton 
+{
+    margin-top: 10px;
+}
+
+#termsContent p
+{
+    text-align: left;
+}
+
+.terms-content 
+{
+    max-height: 200px; /* Set the maximum height of the terms content */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+#headerContExist
+{
+    color: red;
+
+}

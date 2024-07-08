@@ -1,0 +1,94 @@
+body
+{
+    font-family: Calibri;
+    align-items: center;
+    
+}
+
+#contactPic:hover
+{
+    transform: scale(2.5);
+    transition:transform 2s;
+}   
+
+h1, p
+{
+    width: 100%;
+    text-align: center;
+
+}
+
+table
+{
+    width: 90%;
+    
+}
+
+th, td
+{
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+th
+{
+    text-decoration-style:solid 
+}
+
+th:hover
+{
+    background-color: #08c1e298;
+    transition: 500ms;
+}
+
+td:hover
+{
+    background-color: #f1f1f19c;
+    transition: 250ms;
+}
+
+tr:hover 
+{
+    background-color: #f1f1f19c;
+    transition: 250ms;
+}
+
+.buttonContainer
+{
+    border:5px;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+
+}
+
+input[type="button"], button
+{
+    border-radius: 5px;
+    background-color:#1da1ff;
+    border: transparent;
+    color:white;
+    padding: 10px 5px;
+    cursor: pointer ;
+    margin: 10px;
+    /* animation-name: pulse;
+    animation-duration: 3s; */
+    
+}
+
+.actionCell
+{
+    vertical-align: center;
+    
+}
+
+.actionButtons, #searchBar
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archived Contacts</title>
+    <link rel="stylesheet" href="static/archivedContactsStyle.css">
+    <link rel="icon" href="static/imp/rfm.png" type="image/png" sizes="any">
+
+</head>
+<body>
+
+    <h1><i>Archived Contacts</i></h1>
+
+    <div id = "searchBar">
+        <form action="/archiveSearch" method="POST">
+            <label for="nameSearch">Search by name:</label>
+            <input type="text" name="nameSearch" placeholder="Type A name">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <table id="contactsTable">
+        <thead>
+
+            <tr id="headers">
+                <th>Index</th>
+                <th>Delete Date and Time</th>
+                <th>Profile Picture</th>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>Phone Number</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+            
+        </thead>
+        
+        <tbody>
+
+            {% for contact in contacts %}
+                <!--this is also in comment:<a href="/days/{{loop.index-1}}"><li>{{days}}</li></a>-->
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{contact['deleteStamp']}}
+                    <td><img id="contactPic" src= "{% if 'http' in contact.profilePicName %}
+                                                        {{contact.profilePicName}} 
+                                                    {% else %}
+                                                        static/deletedImages/{{contact.profilePicName}}
+                                                    {% endif %}" width="80" /></td>
+                    <td>{{contact['userName']}}</td>
+                    <td>{{contact['mail']}}</td>
+                    <td>{{contact['phone']}}</td>
+                    <td>{{contact['gender']}}</td>
+                    <td class="actionCell">
+                        <div class="actionButtons">
+                            <a href="/erase{{contact['_id']}}"><input type="button" value="Erase" /></a>
+                            <a href="/restore{{contact['_id']}}"><input type="button" value="Restore" /></a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        
+        </tbody>    
+    </table>
+    <br><br>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><b>↑</b></button>
+    <script src="static/archivedContacts.js"></script>
+    <div id="bthn" lang="en"></div><script>
+        (function () {
+           var script = document.createElement("script");
+           script.type = "text/javascript";
+           script.src = "https://bringthemhomenow.net/1.1.0/hostages-ticker.js";
+           script.setAttribute(
+             "integrity",
+             "sha384-DHuakkmS4DXvIW79Ttuqjvl95NepBRwfVGx6bmqBJVVwqsosq8hROrydHItKdsne"
+           );
+           script.setAttribute("crossorigin", "anonymous");
+           document.getElementsByTagName("head")[0].appendChild(script);
+         })();
+        </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Add Contact Form</title>
+    <link rel="stylesheet" href="static/addContactStyle.css">
+    <link rel="icon" href="static/imp/rfm.png" type="image/png" sizes="any">
+    
+</head>
+
+<body>
+    <!--Thumbnail container - big failure
+    <div class="thumbnailContainer" id="thumbnailContainer">
+    </div>
+    -->
+    <!--{{invalid}}  DEBUGGING-->
+    {% if invalid == True %}
+        <div id="contExist">
+            <h2 id="headerContExist">Contact Already Exist!</h2>
+        </div>
+    {%endif%}
+    <form action="/addToContacts" method="POST" enctype="multipart/form-data" id="addForm">
+        <h1>Add Contact:</h1>
+
+        <div class="form-group">
+            <!-- Name -->
+            <label for="name" id="nameLabel">Name*:</label>
+            <input type="text" id="name" required name="contactName" autocomplete="off"/>
+        </div>
+
+        <div class="form-group">
+            <!-- Email -->
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="em" autocomplete="off"/>
+        </div>
+
+        <div class="form-group">
+            <!-- Phone -->
+            <label for="phone">Phone Number*:</label>
+            <div class="labelContainer">
+                <label>+972 (0)</label><input type="tel" id="phone" required name="phoneNumber" 
+                    pattern="[0-9]{8,9}" placeholder="586123456" autocomplete="off"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <!-- Gender -->
+            <label>Gender:</label>
+            <select name="gender">
+                <option value="Male" class="maleOption">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            
+        </div>
+
+        <div class="form-group">
+            <!-- Add Profile Image-->
+            <label for="profileImg">Add Profile Image (only .PNG allowed!):</label><br>
+            <input type="file" name="profileImg" id="profileImg" accept="image/png">
+            <br>
+        </div>
+
+        <div class="CBcontainer">
+            <!-- iAgree -->
+            <input type="checkbox" id="iAgree" required name="agree"/>
+            <label class="checkbox-label" for="iAgree">I Agree to Rules My Lord</label>
+        
+                <!-- Terms and Conditions-->
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                <h2>Terms and Conditions</h2>
+                <div class="terms-content" id="termsContent">
+                    
+                </div>
+                <button id="okButton" type="button" disabled>OK!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SignUp -->
+        <input type="submit" value="Add To Contacts"/>
+        
+    </form>
+    <script src="static/addContact.js"></script>
+    <div id="bthn" lang="en"></div><script>
+        (function () {
+           var script = document.createElement("script");
+           script.type = "text/javascript";
+           script.src = "https://bringthemhomenow.net/1.1.0/hostages-ticker.js";
+           script.setAttribute(
+             "integrity",
+             "sha384-DHuakkmS4DXvIW79Ttuqjvl95NepBRwfVGx6bmqBJVVwqsosq8hROrydHItKdsne"
+           );
+           script.setAttribute("crossorigin", "anonymous");
+           document.getElementsByTagName("head")[0].appendChild(script);
+         })();
+        </script>
+</body>
+</html>

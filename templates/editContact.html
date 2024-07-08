@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Contact</title>
+    <link rel="stylesheet" href="static/editContactStyle.css">
+    <link rel="icon" href="static/imp/rfm.png" type="image/png" sizes="any">
+    
+</head>
+<body>
+    <div class="mainContainer">
+        <h1 class="mainHeader">Edit {{contact[1]}}</h1>
+        <form action="/submitChanges" method="POST" enctype="multipart/form-data">
+            <div class="paramContainer">
+                <div class="tabs">
+                    <div class="tabsWrapper">
+                        <input type="radio" id="name" name="tabsGroup" class="radio" checked>
+                        <input type="radio" id="mail" name="tabsGroup" class="radio" >
+                        <input type="radio" id="phone" name="tabsGroup" class="radio" >
+                        <input type="radio" id="gender" name="tabsGroup" class="radio" >
+                        <input type="radio" id="photo" name="tabsGroup" class="radio" >
+                        <div class="tabsLabels">
+                            <label for="name" class="tab" id="nameTab">Name</label>
+                            <label for="mail" class="tab" id="mailTab">Email Address</label>
+                            <label for="phone" class="tab" id="phoneTab">Phone Number</label>
+                            <label for="gender" class="tab" id="genderTab">Gender</label>
+                            <label for="photo" class="tab" id="photoTab">Profile Picture</label>
+                        </div>
+                        <div class="tabsContent"> <!-- Name Tab -->
+                            <div id="nameTabCont" class="tabCont">
+                                <h2 id="tabTitle">Change Contact's Name:</h2><br><br>
+                                <p class="tabDesc"><b>Current Name:</b><br><br>
+                                    {{contact.userName}}
+                                </p>
+                                <br><br>
+                                <p class="tabDesc">New Name:</p>
+                                <input type="text" id="name" name="contactName" autocomplete="off" placeholder="{{contact.userName}}" value="{{contact.userName}}"/>
+                            </div>
+                            <div id="mailTabCont" class="tabCont"> <!-- Email Tab -->
+                                <h2 id="tabTitle">Change Contact's Email Address:</h2><br><br>
+                                <p class="tabDesc">Current Email Address:</b><br><br>
+                                    {{contact.mail}}
+                                </p>
+                                <br><br>
+                                <p class="tabDesc">New Email Address:</p>
+                                <input type="email" id="mail" name="em" autocomplete="off" placeholder="{{contact.mail}}" value="{{contact.mail}}"/>
+                            </div>
+                            <div id="phoneTabCont" class="tabCont"> <!-- Phone Tab -->
+                                <h2 id="tabTitle">Change Contact's Phone Number:</h2><br><br>
+                                <p class="tabDesc">Current Phone Number:</b><br><br>
+                                    {{contact.phone}}
+                                </p>
+                                <br><br>
+                                <p class="tabDesc">New  Phone Number:</p>
+                                <div class="labelContainer">
+                                    <label>+972 (0)</label><input type="tel" id="phone" name="phoneNumber" 
+                                        pattern="[0-9]{8,9}" placeholder="586123456" autocomplete="off" value="{{phoneNumber}}"/>
+                                </div>
+                            </div>
+                            <div id="genderTabCont" class="tabCont"> <!-- Gender Tab -->
+                                <h2 id="tabTitle">Change Contact's Gender:</h2><br><br>
+                                <p class="tabDesc">Current Gender:</b><br><br>
+                                    {{contact.gender}}
+                                </p>
+                                <br><br>
+                                <p class="tabDesc">New Gender:</p>
+                                <select name="gender">
+                                    <option value="Male"{% if contact.gender == 'Male' %}selected{% endif %}>Male</option>
+                                    <option value="Female" {% if contact.gender == 'Female' %}selected{% endif %}>Female</option>
+                                </select>
+                            </div>
+                            <div id="photoTabCont" class="tabCont"> <!-- Profile Picture Tab -->
+                                <h2 id="tabTitle">Change Contact's Profile Picture:</h2><br><br>
+                                <p class="tabDesc">Current Profile Picture:</b><br><br>
+                                    <img id="avatarPic" src="static/profileImages/{{contact.profilePicName}}" alt="{{contact.userName}}">
+                                </p>
+                                <br><br>
+                                <div class="form-group">
+                                    <!-- Add Profile Image-->
+                                    <label for="profileImg">Change Profile Image (only .PNG allowed!):</label><br>
+                                    <input type="file" name="profileImg" id="profileImg" accept="image/png">
+                                    <br>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="submitContainer">
+                <input type="hidden" name="orgCont" value="{{contact}}">
+                <input type="submit" value="Finish" id="submitChanges" />
+                <!--<a href="/submitChanges"></a>-->
+            </div>
+        </form>
+    </div>
+    <div id="bthn" lang="en"></div><script>
+        (function () {
+           var script = document.createElement("script");
+           script.type = "text/javascript";
+           script.src = "https://bringthemhomenow.net/1.1.0/hostages-ticker.js";
+           script.setAttribute(
+             "integrity",
+             "sha384-DHuakkmS4DXvIW79Ttuqjvl95NepBRwfVGx6bmqBJVVwqsosq8hROrydHItKdsne"
+           );
+           script.setAttribute("crossorigin", "anonymous");
+           document.getElementsByTagName("head")[0].appendChild(script);
+         })();
+        </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    
+}
+
+html
+{
+    background: #ebe9e8;
+}
+
+
+.mainContainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ebe9e8;
+    font-family: Calibri;
+    padding: 100px;
+    margin-bottom: 10px;
+}
+
+
+.mainHeader
+{
+    color: #684907;
+    background-color: transparent;
+    margin-bottom: 0px;
+}
+
+.paramContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    /* margin-top: 20px; */
+    height: fit-content;
+    background: #ebe9e8;
+    font-family: Calibri;
+    
+}
+
+
+.tabs
+{
+    max-width: 640px;
+    padding: 10px;
+       
+}
+
+
+.tabsWrapper
+{
+    display: flex;
+    gap: 20px;   
+}
+
+
+.tabsLabels .tab
+{
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 8px 2px;
+    background: #f1f1f19c;
+    width: 100%;
+    display: inline-block;
+    color: #393939;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 0.8rem #eadad81e;
+    border: 2px solid #bc6c2520;
+}
+
+/* colors to manage: */
+.nothing
+{
+    color:#4682b4;
+    color:#f0f8ff;
+    color:#b0e0e6;
+    color:#696969;
+}  
+
+.tabsLabels .tab:hover
+{
+    background: #b0e0e6;
+    color: #696969;
+}
+
+
+.tabsContent
+{
+    background: #f0f8ff00;
+    
+    color: #393939;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+#name:checked ~ .tabsLabels #nameTab,
+#mail:checked ~ .tabsLabels #mailTab,
+#phone:checked ~ .tabsLabels #phoneTab,
+#gender:checked ~ .tabsLabels #genderTab,
+#photo:checked ~ .tabsLabels #photoTab
+{
+    background: #08c1e298;
+    color: #030303;
+    
+}
+
+
+.tabsWrapper input[type="radio"]
+{
+    display: none;
+}
+
+
+#name:checked ~ .tabsContent #nameTabCont,
+#mail:checked ~ .tabsContent #mailTabCont,
+#phone:checked ~ .tabsContent #phoneTabCont,
+#gender:checked ~ .tabsContent #genderTabCont,
+#photo:checked ~ .tabsContent #photoTabCont
+{
+    display: block;
+       
+}
+
+
+.tabsContent .tabCont
+{
+    display: none;
+}
+
+.labelContainer 
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+
+.labelContainer label
+{
+    font-weight: normal;
+    padding-right: 10px;
+}
+
+
+input[type="submit"]
+{
+    border-radius: 5px;
+    background-color:rgb(29, 161, 255);
+    border: transparent;
+    color:white;
+    padding: 10px 5px;
+    cursor: pointer ;
+    margin: 10px;
+    width: 35%;
+}
+
+
+#avatarPic
+{
+
+    width: 50px;
+}
