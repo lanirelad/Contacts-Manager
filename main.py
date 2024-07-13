@@ -3,7 +3,9 @@ from flask import Flask, redirect, render_template, request
 import os
 import json
 import fakerGenerator as fakeGen
+from dotenv import load_dotenv
 
+load_dotenv()
 
 #  create flask application
 app = Flask(__name__)
@@ -35,6 +37,7 @@ deletedImagesFolder = "static\\deletedImages\\"
 dataBaseSwitcher = os.getenv("DB_USAGE")
 archiveHandler = None
 firstRun = True  # fake db first run
+dbName = None
 dbSwitch()
 
 
